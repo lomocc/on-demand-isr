@@ -1,11 +1,11 @@
+import hljs from 'highlight.js';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en.json';
-import styles from '../styles/Home.module.scss';
-import Layout from '../components/Layout';
-import Image from 'next/image';
 import { marked } from 'marked';
-import hljs from 'highlight.js';
+import Image from 'next/image';
+import Layout from '../components/Layout';
 import { fetchGitHub, readAccessToken } from '../lib/github';
+import styles from '../styles/Home.module.scss';
 
 TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo('en-US');
@@ -46,18 +46,18 @@ export async function getStaticProps({ params }) {
 }
 
 function getIssue(token: string, issue: string) {
-  return fetchGitHub(`/repos/leerob/on-demand-isr/issues/${issue}`, token);
+  return fetchGitHub(`/repos/lomocc/on-demand-isr/issues/${issue}`, token);
 }
 
 function getIssueComments(token: string, issue: string) {
   return fetchGitHub(
-    `/repos/leerob/on-demand-isr/issues/${issue}/comments`,
+    `/repos/lomocc/on-demand-isr/issues/${issue}/comments`,
     token
   );
 }
 
 function getRepoDetails(token: string) {
-  return fetchGitHub('/repos/leerob/on-demand-isr', token);
+  return fetchGitHub('/repos/lomocc/on-demand-isr', token);
 }
 
 function markdownToHtml(markdown) {

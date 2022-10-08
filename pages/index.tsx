@@ -1,10 +1,10 @@
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en.json';
-import styles from '../styles/Home.module.scss';
 import Link from 'next/link';
-import Layout from '../components/Layout';
 import { CommentIcon, IssueIcon } from '../components/icons';
+import Layout from '../components/Layout';
 import { fetchGitHub, readAccessToken } from '../lib/github';
+import styles from '../styles/Home.module.scss';
 
 TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo('en-US');
@@ -28,11 +28,11 @@ export async function getStaticProps() {
 }
 
 function getIssues(token: string) {
-  return fetchGitHub('/repos/leerob/on-demand-isr/issues', token);
+  return fetchGitHub('/repos/lomocc/on-demand-isr/issues', token);
 }
 
 function getRepoDetails(token: string) {
-  return fetchGitHub('/repos/leerob/on-demand-isr', token);
+  return fetchGitHub('/repos/lomocc/on-demand-isr', token);
 }
 
 export default function Home({ issues, stargazers_count, forks_count }: any) {
