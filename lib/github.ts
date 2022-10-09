@@ -12,13 +12,17 @@ async function getAccessToken(installationId: number, token: string) {
 }
 
 function getGitHubJWT() {
+  console.log('====================================');
+  console.log('APP_ID', process.env.APP_ID);
+  console.log('APP_PK_PEM', process.env.APP_PK_PEM);
+  console.log('====================================');
   return jwt.sign(
     {
       iat: Math.floor(Date.now() / 1000) - 60,
-      iss: process.env.GITHUB_APP_ID,
+      iss: process.env.APP_ID,
       exp: Math.floor(Date.now() / 1000) + 60 * 10, // 10 minutes is the max
     },
-    process.env.GITHUB_APP_PK_PEM,
+    process.env.APP_PK_PEM,
     {
       algorithm: 'RS256',
     }

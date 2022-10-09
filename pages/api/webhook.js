@@ -12,7 +12,7 @@ export default async function handleWebhook(req, res) {
   const jsonBody = JSON.parse(body);
 
   // compute our signature from the raw body
-  const secret = process.env.GITHUB_WEBHOOK_SECRET;
+  const secret = process.env.APP_WEBHOOK_SECRET;
   const signature = req.headers['x-hub-signature-256'];
   const computedSignature =
     'sha256=' + createHmac('sha256', secret).update(body).digest('hex');
@@ -52,7 +52,7 @@ function getRawBody(req) {
       const rawBody = Buffer.concat(bodyChunks).toString('utf8');
       resolve(rawBody);
     });
-    req.on('data', (chunk) => bodyChunks.push(chunk));
+    req.on('data', chunk => bodyChunks.push(chunk));
   });
 }
 
