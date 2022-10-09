@@ -1,8 +1,8 @@
-import styles from '../styles/Home.module.scss';
-import { StarIcon, ForkIcon, GitHubIcon, LinkIcon } from '../components/icons';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
 import Head from 'next/head';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { ForkIcon, GitHubIcon, LinkIcon, StarIcon } from '../components/icons';
+import styles from '../styles/Home.module.scss';
 
 export default function Layout({
   children,
@@ -23,7 +23,7 @@ export default function Layout({
           This app demonstrates the new <b>*On-Demand ISR support*</b> in
           Next.js 12.1 (
           <a
-            href="https://github.com/leerob/on-demand-isr"
+            href="https://github.com/lomocc/on-demand-isr"
             target="_blank"
             rel="noreferrer"
           >
@@ -39,7 +39,7 @@ export default function Layout({
           <p>
             When issues on the `
             <a
-              href="https://github.com/leerob/on-demand-isr"
+              href="https://github.com/lomocc/on-demand-isr"
               target="_blank"
               rel="noreferrer"
             >
@@ -84,7 +84,7 @@ export default function Layout({
           <em>
             _💡 Try{' '}
             <a
-              href="https://github.com/leerob/on-demand-isr/issues/new"
+              href="https://github.com/lomocc/on-demand-isr/issues/new"
               target="_blank"
               rel="noreferrer"
             >
@@ -104,11 +104,11 @@ export default function Layout({
         <div className={styles.repo_title}>
           <GitHubIcon />{' '}
           <a
-            href="https://github.com/leerob/on-demand-isr"
+            href="https://github.com/lomocc/on-demand-isr"
             target="_blank"
             rel="noreferrer"
           >
-            leerob
+            lomocc
           </a>{' '}
           /{' '}
           <Link href="/">
@@ -119,7 +119,7 @@ export default function Layout({
               {' '}
               /{' '}
               <a
-                href={`https://github.com/leerob/on-demand-isr/issues/${router.query.id}`}
+                href={`https://github.com/lomocc/on-demand-isr/issues/${router.query.id}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -131,14 +131,14 @@ export default function Layout({
         {homepage ? (
           <div className={styles.forks_stars}>
             <a
-              href="https://github.com/leerob/on-demand-isr/fork"
+              href="https://github.com/lomocc/on-demand-isr/fork"
               target="_blank"
               rel="noreferrer"
             >
               <ForkIcon /> {new Number(forks_count).toLocaleString()}
             </a>
             <a
-              href="https://github.com/leerob/on-demand-isr"
+              href="https://github.com/lomocc/on-demand-isr"
               target="_blank"
               rel="noreferrer"
             >
@@ -148,7 +148,7 @@ export default function Layout({
         ) : (
           <div className={styles.issue_comments}>
             <a
-              href={`https://github.com/leerob/on-demand-isr/issues/${router.query.id}`}
+              href={`https://github.com/lomocc/on-demand-isr/issues/${router.query.id}`}
               target="_blank"
               rel="noreferrer"
             >
